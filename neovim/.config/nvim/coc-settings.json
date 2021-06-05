@@ -47,16 +47,6 @@
   "diagnostic.warningSign": "⚠",
   "diagnostic.infoSign": "•",
   "diagnostic.hintSign": "•",
-  "rpc.detailsEditing": "Editing a {LANG} file",
-  "rpc.detailsInExplorer": "{null}",
-  "rpc.detailsViewing": "Scouting a {LANG} file",
-  "rpc.detailsIdle": "Idling",
-  "rpc.lowerDetailsEditing": "{null}",
-  "rpc.lowerDetailsInExplorer": "{null}",
-  "rpc.lowerDetailsIdle": "{null}",
-  "rpc.lowerDetailsViewing": "{null}",
-  "rpc.workspaceText": "{null}",
-  "rpc.workspaceElapsedTime": true,
   "docthis.inferTypesFromNames": true,
   "docthis.includeExtraLineAfterDescription": false
 }
