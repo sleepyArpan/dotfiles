@@ -1,0 +1,37 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Arpan Chattopadhyay
+	email = arpanchattopadhyay23@gmail.com
+
+[alias]
+  a = add .
+  s = status
+  b = checkout -b
+  co = checkout
+  po = push origin
+  amend = commit --amend --no-edit
+
+[core]
+  pager = delta
+	editor = vim
+
+[delta]
+  features = line-numbers decorations
+  syntax-theme = nord
+  plus-style = syntax "#003800"
+  minus-style = syntax "#3f0001"
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-numbers-minus-style = 124
+  line-numbers-plus-style = 28
+
+[init]
+	defaultBranch = main
