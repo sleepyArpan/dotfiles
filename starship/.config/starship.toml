@@ -1,0 +1,13 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+[character]                        
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[V](bold green) "
+
+[directory]
+truncation_length = 8
+
+[cmd_duration]
+min_time = 20
