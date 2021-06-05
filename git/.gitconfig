@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Arpan Chattopadhyay
-	email = arpanchattopadhyay23@gmail.com
+  name = Arpan Chattopadhyay
+  email = arpanchattopadhyay23@gmail.com
 
 [alias]
   a = add .
@@ -13,11 +13,11 @@
 
 [core]
   pager = delta
-	editor = vim
+  editor = vim
 
 [delta]
   features = line-numbers decorations
-  syntax-theme = nord
+  syntax-theme = Nord
   plus-style = syntax "#003800"
   minus-style = syntax "#3f0001"
 
@@ -34,4 +34,4 @@
   line-numbers-plus-style = 28
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
