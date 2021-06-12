@@ -25,3 +25,4 @@ let g:lightline = {
 " Lightline Bufferline settings
 let g:lightline#bufferline#unicode_symbols = 1
 let g:lightline#bufferline#unnamed = 'Unknown file'
+let g:lightline#bufferline#show_number = 2
