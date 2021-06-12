@@ -9,6 +9,7 @@
   b = checkout -b
   co = checkout
   po = push origin
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
   amend = commit --amend --no-edit
 
 [core]
