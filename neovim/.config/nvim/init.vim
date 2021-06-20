@@ -24,12 +24,18 @@ Plug 'arcticicestudio/nord-vim'
 " File Explorer tings 
 Plug 'preservim/nerdtree'
 " Random tings that make life better
+" Status and bufferline plugin
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
+" gcc for commenting out chunks of code
 Plug 'tpope/vim-commentary'
+" Useful for running tests without leaving the editor
 Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
+" Provides more clarity
 Plug 'Yggdroot/indentLine'
+" Startup screen
+Plug 'mhinz/vim-startify/'
 call plug#end()
 
 " Color schemes
@@ -51,6 +57,10 @@ let g:VimuxCloseOnExit = 1
 
 " IndentLine settings
 let g:indentLine_char = '▏'
+
+" Startify settings
+let g:startify_custom_header =
+      \ 'startify#center(startify#fortune#cowsay())'
 
 set scrolloff=8
 set encoding=UTF-8
