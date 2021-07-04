@@ -33,17 +33,8 @@ nnoremap <leader>tq :VimuxInterruptRunner<CR>
 " Jsdoc remap
 nnoremap <leader>dc :CocCommand docthis.documentThis<CR>
 
-" Lightline Bufferline remaps
-nnoremap <leader>1 :call lightline#bufferline#go(1)<CR>
-nnoremap <leader>2 :call lightline#bufferline#go(2)<CR>
-nnoremap <leader>3 :call lightline#bufferline#go(3)<CR>
-nnoremap <leader>4 :call lightline#bufferline#go(4)<CR>
-nnoremap <leader>5 :call lightline#bufferline#go(5)<CR>
-nnoremap <leader>6 :call lightline#bufferline#go(6)<CR>
-nnoremap <leader>7 :call lightline#bufferline#go(7)<CR>
-nnoremap <leader>8 :call lightline#bufferline#go(8)<CR>
-nnoremap <leader>9 :call lightline#bufferline#go(9)<CR>
-nnoremap <leader>0 :call lightline#bufferline#go(10)<CR>
+" BufferLine Picks
+nnoremap <leader>1 :BufferLinePick<CR>
 
 " When popup menu has scrollable content, enable scroll
 nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"

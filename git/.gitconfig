@@ -18,7 +18,7 @@
 
 [delta]
   features = line-numbers decorations
-  syntax-theme = Nord
+  syntax-theme = gruvbox-dark
   plus-style = syntax "#003800"
   minus-style = syntax "#3f0001"
 

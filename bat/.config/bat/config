@@ -1,2 +1,2 @@
---theme="Nord"
+--theme="gruvbox-dark"
 --map-syntax "*.js:JavaScript (Babel)"

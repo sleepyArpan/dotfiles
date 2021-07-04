@@ -4,13 +4,12 @@ let g:mapleader = "\<Space>"
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/bufonly.vim
-source $HOME/.config/nvim/plug-config/lightline.vim
 source $HOME/.config/nvim/mappings.vim
 
 " Plugzzzz
 call plug#begin('~/.vim/plugged')
 " Language tings
-Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Autocompletion tings
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "File search tings
@@ -20,13 +19,16 @@ Plug 'airblade/vim-rooter'
 "Git tings
 Plug 'tpope/vim-fugitive'
 "Aesthetic tings
-Plug 'arcticicestudio/nord-vim'
+Plug 'rktjmp/lush.nvim'
+Plug 'npxbr/gruvbox.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 " File Explorer tings 
 Plug 'preservim/nerdtree'
 " Random tings that make life better
-" Status and bufferline plugin
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
+" Status line
+Plug 'hoob3rt/lualine.nvim'
+" Buffer line
+Plug 'akinsho/nvim-bufferline.lua'
 " gcc for commenting out chunks of code
 Plug 'tpope/vim-commentary'
 " Useful for running tests without leaving the editor
@@ -40,7 +42,7 @@ call plug#end()
 
 " Color schemes
 set termguicolors
-colorscheme nord
+colorscheme gruvbox
 
 " NerdTree settings
 let g:NERDTreeWinPos = "right"
@@ -62,6 +64,36 @@ let g:indentLine_char = '▏'
 let g:startify_custom_header =
       \ 'startify#center(startify#fortune#cowsay())'
 
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true
+  }
+}
+require'lualine'.setup {
+  options = {
+    icons_enabled = true,
+    theme = 'gruvbox',
+    component_separators = {'', ''},
+    section_separators = {'', ''},
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch'},
+    lualine_c = {'filename'},
+    lualine_x = { { 'diagnostics', sources = { "coc" } },'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  }
+}
+require("bufferline").setup{
+  options = {
+    show_buffer_close_icons = false,
+    tab_size = 18,
+  }
+}
+EOF
+
 set scrolloff=8
 set encoding=UTF-8
 set number relativenumber
@@ -81,7 +113,6 @@ set confirm
 set hidden
 set wildmenu
 set showtabline=2
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set timeoutlen=1000
 set ttimeoutlen=5
 syntax enable
