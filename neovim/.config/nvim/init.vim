@@ -24,6 +24,7 @@ Plug 'npxbr/gruvbox.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 " File Explorer tings 
 Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 " Random tings that make life better
 " Status line
 Plug 'hoob3rt/lualine.nvim'
@@ -44,10 +45,40 @@ call plug#end()
 set termguicolors
 colorscheme gruvbox
 
-" NerdTree settings
-let g:NERDTreeWinPos = "right"
-let g:NERDTreeWinSize = 60
-let g:NERDTreeShowHidden=1
+let g:nvim_tree_side = 'right'
+let g:nvim_tree_width = 80
+let g:nvim_tree_ignore = ['.git']
+let g:nvim_tree_auto_close = 1
+let g:nvim_tree_follow = 1
+let g:nvim_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★",
+    \   'deleted': "",
+    \   'ignored': "◌"
+    \   },
+    \ 'folder': {
+    \   'arrow_open': "ᐁ",
+    \   'arrow_closed': "",
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   'symlink_open': "",
+    \   },
+    \   'lsp': {
+    \     'hint': "",
+    \     'info': "",
+    \     'warning': "",
+    \     'error': "",
+    \   }
+    \ }
 
 " Vim Test settings
 let test#strategy = "vimux"

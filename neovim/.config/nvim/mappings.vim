@@ -11,9 +11,9 @@ nnoremap <leader>gs :Git<CR>
 " get git blame for current file
 nnoremap <leader>gb :Git blame<CR>
 
-" NERDTREE REMAPS
-nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>e :NERDTreeToggle %<CR>
+" NvimTree REMAPS
+nnoremap <leader>e :NvimTreeToggle<CR>
+nnoremap <leader>ff :NvimTreeFindFile<CR><CR>
 
 " Vim Test remaps
 nnoremap <leader>tn :TestNearest<CR>
@@ -51,6 +51,6 @@ nnoremap <leader>bc :BufferClose<CR>
 " Magic buffer-picking mode
 nnoremap <leader>bp :BufferPick<CR>
 " Re-order to previous/next
-nnoremap <leader>bn :BufferMoveNext<CR>
-nnoremap <leader>bp :BufferMovePrevious<CR>
+nnoremap <silent>mbn :BufferMoveNext<CR>
+nnoremap <silent>mbp :BufferMovePrevious<CR>
 nnoremap <leader>cl :BufferCloseAllButCurrent<CR>
