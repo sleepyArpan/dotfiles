@@ -3,13 +3,13 @@ let g:mapleader = "\<Space>"
 " Plug config
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/bufonly.vim
 source $HOME/.config/nvim/mappings.vim
 
 " Plugzzzz
 call plug#begin('~/.vim/plugged')
 " Language tings
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 " Autocompletion tings
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "File search tings
@@ -28,7 +28,7 @@ Plug 'preservim/nerdtree'
 " Status line
 Plug 'hoob3rt/lualine.nvim'
 " Buffer line
-Plug 'akinsho/nvim-bufferline.lua'
+Plug 'romgrk/barbar.nvim'
 " gcc for commenting out chunks of code
 Plug 'tpope/vim-commentary'
 " Useful for running tests without leaving the editor
@@ -84,15 +84,16 @@ require'lualine'.setup {
     lualine_x = { { 'diagnostics', sources = { "coc" } },'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
-  }
-}
-require("bufferline").setup{
-  options = {
-    show_buffer_close_icons = false,
-    tab_size = 18,
-  }
+  },
+  extensions = { 'fugitive', 'nerdtree' }
 }
 EOF
+
+" Bufferline settings
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.animation = v:false
+let bufferline.closable = v:false
+let bufferline.clickable = v:false
 
 set scrolloff=8
 set encoding=UTF-8

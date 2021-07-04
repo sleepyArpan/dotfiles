@@ -1,9 +1,5 @@
 " Sourcing the vimrc
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-" Moves to next buffer
-nnoremap <tab> :bn<CR>
-" Moves to previous buffer
-nnoremap <S-tab> :bp<CR>
 
 " FUGITIVE REMAPS
 " get from right side
@@ -33,9 +29,28 @@ nnoremap <leader>tq :VimuxInterruptRunner<CR>
 " Jsdoc remap
 nnoremap <leader>dc :CocCommand docthis.documentThis<CR>
 
-" BufferLine Picks
-nnoremap <leader>1 :BufferLinePick<CR>
-
 " When popup menu has scrollable content, enable scroll
 nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+
+" Bufferline maps
+nnoremap <tab> :BufferNext<CR>
+nnoremap <S-tab> :BufferPrevious<CR>
+" Goto buffer in position...
+nnoremap <leader>1 :BufferGoto 1<CR>
+nnoremap <leader>2 :BufferGoto 2<CR>
+nnoremap <leader>3 :BufferGoto 3<CR>
+nnoremap <leader>4 :BufferGoto 4<CR>
+nnoremap <leader>5 :BufferGoto 5<CR>
+nnoremap <leader>6 :BufferGoto 6<CR>
+nnoremap <leader>7 :BufferGoto 7<CR>
+nnoremap <leader>8 :BufferGoto 8<CR>
+nnoremap <leader>9 :BufferLast<CR>
+" Close buffer
+nnoremap <leader>bc :BufferClose<CR>
+" Magic buffer-picking mode
+nnoremap <leader>bp :BufferPick<CR>
+" Re-order to previous/next
+nnoremap <leader>bn :BufferMoveNext<CR>
+nnoremap <leader>bp :BufferMovePrevious<CR>
+nnoremap <leader>cl :BufferCloseAllButCurrent<CR>
