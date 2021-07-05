@@ -112,11 +112,11 @@ require'lualine'.setup {
     lualine_a = {'mode'},
     lualine_b = {'branch'},
     lualine_c = {'filename'},
-    lualine_x = { { 'diagnostics', sources = { "coc" } },'encoding', 'fileformat', 'filetype'},
+    lualine_x = { { 'diagnostics', sources = { "coc" } },'diff','encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
-  extensions = { 'fugitive', 'nvim-tree' }
+  extensions = { 'fugitive', 'nvim-tree', 'fzf' }
 }
 EOF
 
