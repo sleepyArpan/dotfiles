@@ -19,9 +19,8 @@ Plug 'airblade/vim-rooter'
 "Git tings
 Plug 'tpope/vim-fugitive'
 "Aesthetic tings
-Plug 'rktjmp/lush.nvim'
-Plug 'npxbr/gruvbox.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/tokyonight.nvim'
 " File Explorer tings 
 Plug 'preservim/nerdtree'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -42,8 +41,11 @@ Plug 'mhinz/vim-startify/'
 call plug#end()
 
 " Color schemes
+let g:tokyonight_style = "storm"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_lualine_bold = 1
 set termguicolors
-colorscheme gruvbox
+colorscheme tokyonight
 
 let g:nvim_tree_side = 'right'
 let g:nvim_tree_width = 80
@@ -104,7 +106,7 @@ require'nvim-treesitter.configs'.setup {
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
+    theme = 'tokyonight',
     component_separators = {'', ''},
     section_separators = {'', ''},
   },
