@@ -10,16 +10,17 @@ window:
     y: 6
 # background_opacity: 0.96
 
+      
 # TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '0x24283b'
+    background: '0x1a1b26'
     foreground: '0xc0caf5'
 
   # Normal colors
   normal:
-    black:   '0x1D202F'
+    black:   '0x15161E'
     red:     '0xf7768e'
     green:   '0x9ece6a'
     yellow:  '0xe0af68'
@@ -42,6 +43,7 @@ colors:
   indexed_colors:
     - { index: 16, color: '0xff9e64' }
     - { index: 17, color: '0xdb4b4b' }
+
 
 font: 
   normal:

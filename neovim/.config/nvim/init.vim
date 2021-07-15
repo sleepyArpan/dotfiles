@@ -41,9 +41,7 @@ Plug 'mhinz/vim-startify/'
 call plug#end()
 
 " Color schemes
-let g:tokyonight_style = "storm"
-let g:tokyonight_italic_functions = 1
-let g:tokyonight_lualine_bold = 1
+let g:tokyonight_style = "night"
 set termguicolors
 colorscheme tokyonight
 
