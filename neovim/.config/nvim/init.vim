@@ -2,7 +2,6 @@ let g:mapleader = "\<Space>"
 
 " Plug config
 source $HOME/.config/nvim/plug-config/coc.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/mappings.vim
 
 " Plugzzzz
@@ -13,9 +12,10 @@ Plug 'nvim-treesitter/playground'
 " Autocompletion tings
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "File search tings
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 "Git tings
 Plug 'tpope/vim-fugitive'
 "Aesthetic tings
@@ -42,6 +42,8 @@ call plug#end()
 
 " Color schemes
 let g:tokyonight_style = "night"
+let g:tokyonight_lualine_bold = 1
+let g:tokyonight_hide_inactive_statusline = 1
 set termguicolors
 colorscheme tokyonight
 
@@ -95,6 +97,13 @@ let g:indentLine_char = '▏'
 let g:startify_custom_header =
       \ 'startify#center(startify#fortune#cowsay())'
 
+" Telescope remaps
+nnoremap <leader><tab> :Telescope buffers<CR>
+nnoremap <C-g> :Telescope live_grep<CR>
+nnoremap <C-p> :Telescope git_files<CR>
+nnoremap <leader>pf :Telescope find_files<CR>
+nnoremap <leader>tbe :Telescope file_browser<CR>
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
@@ -117,6 +126,17 @@ require'lualine'.setup {
     lualine_z = {'location'}
   },
   extensions = { 'fugitive', 'nvim-tree', 'fzf' }
+}
+require('telescope').setup{
+  defaults = {
+    initial_mode = "insert",
+    prompt_prefix = "🔎 ",
+    layout_config = {
+      prompt_position = "top",
+    },
+    sorting_strategy = "ascending",
+    path_display = { 'shorten' }
+  }
 }
 EOF
 
