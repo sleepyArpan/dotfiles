@@ -16,6 +16,6 @@ Personal dotfiles managed using [GNU Stow](https://www.gnu.org/software/stow/).
 - [Neovim](https://neovim.io/) as the editor
 - [Tmux](https://github.com/tmux/tmux) as the terminal multiplexer
 
-[Gruvbox](https://github.com/morhetz/gruvbox) is the default theme used in this setup
+[Tokyo Night](https://github.com/folke/tokyonight.nvim) is the default theme used in this setup
 
   
