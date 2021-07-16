@@ -11,10 +11,6 @@ nnoremap <leader>gs :Git<CR>
 " get git blame for current file
 nnoremap <leader>gb :Git blame<CR>
 
-" NvimTree REMAPS
-nnoremap <leader>e :NvimTreeToggle<CR>
-nnoremap <leader>ff :NvimTreeFindFile<CR><CR>
-
 " Vim Test remaps
 nnoremap <leader>tn :TestNearest<CR>
 nnoremap <leader>tf :TestFile<CR>
@@ -54,3 +50,12 @@ nnoremap <leader>bp :BufferPick<CR>
 nnoremap <silent>mbn :BufferMoveNext<CR>
 nnoremap <silent>mbp :BufferMovePrevious<CR>
 nnoremap <leader>cl :BufferCloseAllButCurrent<CR>
+
+" Telescope remaps
+nnoremap <leader><tab> :Telescope buffers<CR>
+nnoremap <C-g> :Telescope live_grep<CR>
+nnoremap <C-p> :Telescope git_files<CR>
+nnoremap <leader>pf :Telescope find_files<CR>
+" NvimTree REMAPS
+nnoremap <leader>e :NvimTreeToggle<CR>
+nnoremap <leader>ff :NvimTreeFindFile<CR><CR>

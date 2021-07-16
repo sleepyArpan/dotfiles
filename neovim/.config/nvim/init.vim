@@ -21,10 +21,9 @@ Plug 'tpope/vim-fugitive'
 "Aesthetic tings
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/tokyonight.nvim'
-" File Explorer tings 
-Plug 'preservim/nerdtree'
-Plug 'kyazdani42/nvim-tree.lua'
 " Random tings that make life better
+" File Explorer
+Plug 'kyazdani42/nvim-tree.lua'
 " Status line
 Plug 'hoob3rt/lualine.nvim'
 " Buffer line
@@ -47,6 +46,7 @@ let g:tokyonight_hide_inactive_statusline = 1
 set termguicolors
 colorscheme tokyonight
 
+" File Tree settings
 let g:nvim_tree_side = 'right'
 let g:nvim_tree_width = 80
 let g:nvim_tree_ignore = ['.git']
@@ -82,6 +82,7 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
+
 " Vim Test settings
 let test#strategy = "vimux"
 
@@ -96,13 +97,6 @@ let g:indentLine_char = '▏'
 " Startify settings
 let g:startify_custom_header =
       \ 'startify#center(startify#fortune#cowsay())'
-
-" Telescope remaps
-nnoremap <leader><tab> :Telescope buffers<CR>
-nnoremap <C-g> :Telescope live_grep<CR>
-nnoremap <C-p> :Telescope git_files<CR>
-nnoremap <leader>pf :Telescope find_files<CR>
-nnoremap <leader>tbe :Telescope file_browser<CR>
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -145,6 +139,10 @@ let bufferline = get(g:, 'bufferline', {})
 let bufferline.animation = v:false
 let bufferline.closable = v:false
 let bufferline.clickable = v:false
+
+" Netrw settings
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 3
 
 set scrolloff=8
 set encoding=UTF-8
