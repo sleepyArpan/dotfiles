@@ -28,7 +28,7 @@ Plug 'hoob3rt/lualine.nvim'
 " Buffer line
 Plug 'romgrk/barbar.nvim'
 " gcc for commenting out chunks of code
-Plug 'tpope/vim-commentary'
+Plug 'b3nj5m1n/kommentary'
 " Useful for running tests without leaving the editor
 Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
@@ -57,11 +57,7 @@ let g:dashboard_custom_header = [
 \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \]
-" let g:dashboard_preview_command = 'cat'
-" let g:dashboard_preview_pipeline = 'lolcat'
-" let g:dashboard_preview_file = '~/.config/nvim/neovim-logo.cat'
-" let g:dashboard_preview_file_height = 12
-" let g:dashboard_preview_file_width = 80
+let g:dashboard_custom_footer = ['👋 Happy Coding']
 
 " Color schemes
 let g:tokyonight_style = "night"
