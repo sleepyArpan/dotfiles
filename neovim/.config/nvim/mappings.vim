@@ -56,6 +56,16 @@ nnoremap <leader><tab> :Telescope buffers<CR>
 nnoremap <C-g> :Telescope live_grep<CR>
 nnoremap <C-p> :Telescope git_files<CR>
 nnoremap <leader>pf :Telescope find_files<CR>
+
 " NvimTree REMAPS
 nnoremap <leader>e :NvimTreeToggle<CR>
 nnoremap <leader>ff :NvimTreeFindFile<CR><CR>
+
+" Dashboard remaps
+nnoremap <Leader>ss :<C-u>SessionSave<CR>
+nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
+nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>cn :DashboardNewFile<CR>

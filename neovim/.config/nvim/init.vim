@@ -8,7 +8,6 @@ source $HOME/.config/nvim/mappings.vim
 call plug#begin('~/.vim/plugged')
 " Language tings
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
 " Autocompletion tings
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "File search tings
@@ -35,14 +34,40 @@ Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
 " Provides more clarity
 Plug 'Yggdroot/indentLine'
-" Startup screen
-Plug 'mhinz/vim-startify/'
+" Startup
+Plug 'glepnir/dashboard-nvim'
 call plug#end()
+
+" Dashboard settings
+let g:dashboard_default_executive = 'telescope'
+let g:dashboard_custom_shortcut={
+\ 'last_session'       : 'SPC s l',
+\ 'find_history'       : 'SPC f h',
+\ 'find_file'          : 'SPC f f',
+\ 'new_file'           : 'SPC c n',
+\ 'change_colorscheme' : 'SPC c c',
+\ 'find_word'          : 'SPC f a',
+\ 'book_marks'         : 'SPC f b',
+\ }
+let g:dashboard_custom_header = [
+\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+\]
+" let g:dashboard_preview_command = 'cat'
+" let g:dashboard_preview_pipeline = 'lolcat'
+" let g:dashboard_preview_file = '~/.config/nvim/neovim-logo.cat'
+" let g:dashboard_preview_file_height = 12
+" let g:dashboard_preview_file_width = 80
 
 " Color schemes
 let g:tokyonight_style = "night"
 let g:tokyonight_lualine_bold = 1
 let g:tokyonight_hide_inactive_statusline = 1
+let g:tokyonight_italic_keywords = 0
 set termguicolors
 colorscheme tokyonight
 
@@ -52,36 +77,6 @@ let g:nvim_tree_width = 80
 let g:nvim_tree_ignore = ['.git']
 let g:nvim_tree_auto_close = 1
 let g:nvim_tree_follow = 1
-let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "ᐁ",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   },
-    \   'lsp': {
-    \     'hint': "",
-    \     'info': "",
-    \     'warning': "",
-    \     'error': "",
-    \   }
-    \ }
-
 
 " Vim Test settings
 let test#strategy = "vimux"
@@ -93,6 +88,7 @@ let g:VimuxCloseOnExit = 1
 
 " IndentLine settings
 let g:indentLine_char = '▏'
+let g:indentLine_fileTypeExclude = ['dashboard']
 
 " Startify settings
 let g:startify_custom_header =
@@ -162,8 +158,8 @@ set linebreak
 set confirm
 set hidden
 set wildmenu
-set showtabline=2
 set timeoutlen=1000
 set ttimeoutlen=5
 syntax enable
-
+" Disables tabline in nvim dashboard
+autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2

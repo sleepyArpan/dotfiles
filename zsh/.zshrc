@@ -13,9 +13,6 @@ if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
   . /opt/local/etc/profile.d/bash_completion.sh
 fi
 
-# alias cat to bat
-alias cat='bat'
-
 # alias for tmux shell script
 alias dev="sh ~/Development/scripts/dev.sh"
 
