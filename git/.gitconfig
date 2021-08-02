@@ -14,7 +14,7 @@
 
 [core]
   pager = delta
-  editor = vim
+  editor = nvim
 
 [delta]
   features = line-numbers decorations

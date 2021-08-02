@@ -36,6 +36,8 @@ Plug 'preservim/vimux'
 Plug 'Yggdroot/indentLine'
 " Startup
 Plug 'glepnir/dashboard-nvim'
+" Discord rich presence
+Plug 'andweeb/presence.nvim'
 call plug#end()
 
 " Dashboard settings
@@ -86,10 +88,6 @@ let g:VimuxCloseOnExit = 1
 let g:indentLine_char = '▏'
 let g:indentLine_fileTypeExclude = ['dashboard']
 
-" Startify settings
-let g:startify_custom_header =
-      \ 'startify#center(startify#fortune#cowsay())'
-
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
@@ -111,7 +109,7 @@ require'lualine'.setup {
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
-  extensions = { 'fugitive', 'nvim-tree', 'fzf' }
+  extensions = { 'fugitive', 'nvim-tree' }
 }
 require('telescope').setup{
   defaults = {
@@ -124,6 +122,24 @@ require('telescope').setup{
     path_display = { 'shorten' }
   }
 }
+require("presence"):setup({
+    -- General options
+    auto_update         = true,                       -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
+    neovim_image_text   = "The One True Text Editor", -- Text displayed when hovered over the Neovim image
+    main_image          = "neovim",                   -- Main image display (either "neovim" or "file")
+    log_level           = nil,                        -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
+    debounce_timeout    = 10,                         -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
+    enable_line_number  = false,                      -- Displays the current line number instead of the current project
+
+    -- Rich Presence text options
+    editing_text        = "Editing a file",               -- Format string rendered when an editable file is loaded in the buffer
+    file_explorer_text  = "Browsing a file",              -- Format string rendered when browsing a file explorer
+    git_commit_text     = "Committing changes",       -- Format string rendered when commiting changes in git
+    plugin_manager_text = "Managing plugins",         -- Format string rendered when managing plugins
+    reading_text        = "Reading a file",               -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer
+    workspace_text      = "Working on %s",            -- Workspace format string (either string or function(git_project_name: string|nil, buffer: string): string)
+    line_number_text    = "Line %s out of %s",        -- Line number format string (for when enable_line_number is set to true)
+})
 EOF
 
 " Bufferline settings
