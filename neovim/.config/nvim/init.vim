@@ -24,11 +24,13 @@ Plug 'folke/tokyonight.nvim'
 " File Explorer
 Plug 'kyazdani42/nvim-tree.lua'
 " Status line
-Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 " Buffer line
 Plug 'romgrk/barbar.nvim'
-" gcc for commenting out chunks of code
+" gcc for commenting out chunks of code and commentstring plugin to support
+" multiple comment types in a single file
 Plug 'b3nj5m1n/kommentary'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 " Useful for running tests without leaving the editor
 Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
@@ -62,19 +64,13 @@ let g:dashboard_custom_header = [
 let g:dashboard_custom_footer = ['👋 Happy Coding']
 
 " Color schemes
-let g:tokyonight_style = "night"
+let g:tokyonight_style = "storm"
 let g:tokyonight_lualine_bold = 1
 let g:tokyonight_hide_inactive_statusline = 1
-let g:tokyonight_italic_keywords = 0
+let g:tokyonight_italic_keywords = 1
+" let g:tokyonight_italic_functions = 1
 set termguicolors
 colorscheme tokyonight
-
-" File Tree settings
-let g:nvim_tree_side = 'right'
-let g:nvim_tree_width = 80
-let g:nvim_tree_ignore = ['.git']
-let g:nvim_tree_auto_close = 1
-let g:nvim_tree_follow = 1
 
 " Vim Test settings
 let test#strategy = "vimux"
@@ -92,6 +88,10 @@ lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true
+  },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false
   }
 }
 require'lualine'.setup {
@@ -140,7 +140,33 @@ require("presence"):setup({
     workspace_text      = "Working on %s",            -- Workspace format string (either string or function(git_project_name: string|nil, buffer: string): string)
     line_number_text    = "Line %s out of %s",        -- Line number format string (for when enable_line_number is set to true)
 })
+require('kommentary.config').configure_language('typescriptreact', {
+  single_line_comment_string = 'auto',
+  multi_line_comment_strings = 'auto',
+  hook_function = function()
+    require('ts_context_commentstring.internal').update_commentstring()
+  end,
+})
+require('kommentary.config').configure_language('javascriptreact', {
+  single_line_comment_string = 'auto',
+  multi_line_comment_strings = 'auto',
+  hook_function = function()
+    require('ts_context_commentstring.internal').update_commentstring()
+  end,
+})
+require'nvim-tree'.setup {
+  auto_close = true,
+  view = {
+    width = 80,
+    side = 'right',
+    auto_resize = true
+  }  
+} 
 EOF
+
+" File Tree settings
+let g:nvim_tree_ignore = ['.git']
+let g:nvim_tree_follow = 1
 
 " Bufferline settings
 let bufferline = get(g:, 'bufferline', {})

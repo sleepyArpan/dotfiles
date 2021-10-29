@@ -64,7 +64,7 @@ nnoremap <leader>ff :NvimTreeFindFile<CR><CR>
 " Dashboard remaps
 nnoremap <Leader>ss :<C-u>SessionSave<CR>
 nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
-nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+nnoremap <silent> <Leader>fp :DashboardFindFile<CR>
 nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
 nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
 nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
