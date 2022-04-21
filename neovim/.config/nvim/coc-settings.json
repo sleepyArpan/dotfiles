@@ -5,23 +5,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "eslint.options": {
-    "env": {
-      "browser": true,
-      "jest/globals": true,
-      "es6": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 2020,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "rules": {
-      "no-debugger": "off"
-    }
-  },
   "prettier.singleQuote": true,
   "prettier.arrowParens": "always",
   "coc.preferences.formatOnSaveFiletypes": [

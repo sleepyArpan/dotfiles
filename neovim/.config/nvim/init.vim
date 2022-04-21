@@ -14,7 +14,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-rooter'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 "Git tings
 Plug 'tpope/vim-fugitive'
 "Aesthetic tings
@@ -36,32 +37,9 @@ Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
 " Provides more clarity
 Plug 'Yggdroot/indentLine'
-" Startup
-Plug 'glepnir/dashboard-nvim'
 " Discord rich presence
 Plug 'andweeb/presence.nvim'
 call plug#end()
-
-" Dashboard settings
-let g:dashboard_default_executive = 'telescope'
-let g:dashboard_custom_shortcut={
-\ 'last_session'       : 'SPC s l',
-\ 'find_history'       : 'SPC f h',
-\ 'find_file'          : 'SPC f f',
-\ 'new_file'           : 'SPC c n',
-\ 'change_colorscheme' : 'SPC c c',
-\ 'find_word'          : 'SPC f a',
-\ 'book_marks'         : 'SPC f b',
-\ }
-let g:dashboard_custom_header = [
-\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-\]
-let g:dashboard_custom_footer = ['👋 Happy Coding']
 
 " Color schemes
 let g:tokyonight_style = "storm"
@@ -110,17 +88,6 @@ require'lualine'.setup {
     lualine_z = {'location'}
   },
   extensions = { 'fugitive', 'nvim-tree' }
-}
-require('telescope').setup{
-  defaults = {
-    initial_mode = "insert",
-    prompt_prefix = "🔎 ",
-    layout_config = {
-      prompt_position = "top",
-    },
-    sorting_strategy = "ascending",
-    path_display = { 'shorten' }
-  }
 }
 require("presence"):setup({
     -- General options
@@ -178,6 +145,25 @@ let bufferline.clickable = v:false
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 3
 
+" Fzf settings
+" Customize fzf colors to match your color scheme                                          
+" - fzf#wrap translates this to a set of `--color` options                                 
+let g:fzf_colors =                                                                         
+\ { 'fg':      ['fg', 'Normal'],                                                           
+  \ 'bg':      ['bg', 'Normal'],                                                           
+  \ 'hl':      ['fg', 'Comment'],                                                          
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],                             
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],                                       
+  \ 'hl+':     ['fg', 'Statement'],                                                        
+  \ 'info':    ['fg', 'PreProc'],                                                          
+  \ 'border':  ['fg', 'Ignore'],                                                           
+  \ 'prompt':  ['fg', 'Conditional'],                                                      
+  \ 'pointer': ['fg', 'Exception'],                                                        
+  \ 'marker':  ['fg', 'Keyword'],                                                          
+  \ 'spinner': ['fg', 'Label'],                                                            
+  \ 'header':  ['fg', 'Comment'] } 
+
+
 set scrolloff=8
 set encoding=UTF-8
 set number relativenumber
@@ -198,6 +184,9 @@ set hidden
 set wildmenu
 set timeoutlen=1000
 set ttimeoutlen=5
+setlocal foldmethod=indent
+set nofoldenable
+set foldlevel=99
 syntax enable
 " Disables tabline in nvim dashboard
 autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2

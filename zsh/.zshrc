@@ -15,6 +15,13 @@ fi
 
 # alias for tmux shell script
 alias dev="sh ~/Development/scripts/dev.sh"
+# alias pip=pip3
+# alias python3=python3.7
+
+# Navi things
+# VIRTUALENVWRAPPER_PYTHON=$(which python3)
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # Prefer exa over ls
 if type exa > /dev/null 2>&1; then
