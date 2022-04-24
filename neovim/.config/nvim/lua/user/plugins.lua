@@ -45,6 +45,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "folke/tokyonight.nvim" -- Colorscheme
+  use 'shaunsingh/nord.nvim'
   use {
    'romgrk/barbar.nvim',
    requires = {'kyazdani42/nvim-web-devicons'}
