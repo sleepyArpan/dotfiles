@@ -1,3 +1,5 @@
+local keymap = require('user.utils').map;
+
 require'nvim-tree'.setup {
   view = {
     width = 80,
@@ -10,3 +12,6 @@ require'nvim-tree'.setup {
 vim.cmd [[
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]
+
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>")
+keymap("n", "<leader>ff", ":NvimTreeFindFile<cr>")
