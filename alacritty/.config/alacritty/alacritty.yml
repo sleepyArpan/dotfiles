@@ -61,22 +61,19 @@ colors:
 
 font: 
   normal:
-    # family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     # family: DankMono Nerd Font 
-    family: Droid Sans Mono Nerd Font
     style: Regular
   bold:
-    # family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     # family: DankMono Nerd Font 
-    family: Droid Sans Mono Nerd Font
     style: Bold
   italic:
-    # family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     # family: DankMono Nerd Font 
-    family: Droid Sans Mono Nerd Font
     style: Italic
-  # size: 11.0
-  size: 13.0
+  size: 12.0
+  # size: 13.0
   offset:
     x: 0
     y: 0
