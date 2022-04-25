@@ -67,6 +67,17 @@ return packer.startup(function(use)
    'nvim-treesitter/nvim-treesitter',
    run = ':TSUpdate'
   }) -- AST parser
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp", -- nvim-cmp source lsp completion
+      "hrsh7th/cmp-buffer", -- nvim-cmp source for buffer completion
+      "hrsh7th/cmp-path", -- nvim-cmp source for path completion
+      "saadparwaiz1/cmp_luasnip", -- nvim-cmp source for lua snip
+      "L3MON4D3/LuaSnip", -- nvim-cmp requires a snippet engine for completion
+    }
+   });
+  use "rafamadriz/friendly-snippets" -- Bunch of snippets
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

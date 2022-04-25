@@ -1,6 +1,11 @@
 local keymap = require('user.utils').map;
 
 require'nvim-tree'.setup {
+  renderer = {
+    indent_markers = {
+     enable = true
+   }
+  },
   view = {
     width = 80,
     side = 'right',
