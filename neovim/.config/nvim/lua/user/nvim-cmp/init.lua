@@ -1,4 +1,5 @@
 local cmp = require('cmp');
+local luasnip = require('luasnip');
 local utils = require('user.nvim-cmp.utils');
 
 cmp.setup({
@@ -32,6 +33,34 @@ cmp.setup({
       select = true,
     }),
     ['<C-Space>'] = cmp.mapping.complete(),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expandable() then
+        luasnip.expand()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif utils.check_backspace() then
+        fallback()
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),
   },
   experimental = {
     ghost_text = true,

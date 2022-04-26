@@ -1,7 +1,7 @@
 -- If needed options can be added here
 require('lualine').setup {
   options = {
-    theme = 'nord'
+    theme = 'tokyonight'
   },
   extensions = { 'nvim-tree' }
 }

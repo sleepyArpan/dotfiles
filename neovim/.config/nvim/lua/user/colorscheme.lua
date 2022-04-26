@@ -1,4 +1,3 @@
-vim.g.nord_borders = true
-vim.g.nord_contrast = true
-vim.g.nord_italic = false
-vim.cmd[[colorscheme nord]]
+vim.g.tokyonight_style = "night";
+vim.g.tokyonight_italic_keywords = false;
+vim.cmd[[colorscheme tokyonight]]
