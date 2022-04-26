@@ -1,6 +1,7 @@
 local keymap = require('user.utils').map;
 
 require'nvim-tree'.setup {
+  hijack_cursor = true,
   renderer = {
     indent_markers = {
      enable = true
@@ -10,6 +11,15 @@ require'nvim-tree'.setup {
     width = 80,
     side = 'right',
     auto_resize = true
+  },
+  filters = {
+    dotfiles = false,
+    custom = { ".git", "node_modules", ".cache", "language-servers", ".undo_history" }
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 400
   }
 }
 
