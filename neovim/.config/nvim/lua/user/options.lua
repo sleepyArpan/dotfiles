@@ -11,7 +11,6 @@ local options = {
 	wrap = false,
 	linebreak = true,
 	breakindent = true,
-	cursorline = true,
 	tabstop = 2,
   softtabstop = 2,
 	shiftwidth = 2,
