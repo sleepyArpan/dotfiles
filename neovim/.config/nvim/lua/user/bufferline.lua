@@ -7,8 +7,8 @@ vim.g.bufferline = {
 
 -- Navigate buffers
 -- Move to previous/next
-keymap('n', '<A-,>', ':BufferPrevious<CR>')
-keymap('n', '<A-.>', ':BufferNext<CR>')
+keymap('n', '<A-h>', ':BufferPrevious<CR>')
+keymap('n', '<A-l>', ':BufferNext<CR>')
 -- Re-order to previous/next
 keymap('n', '<A-<>', ':BufferMovePrevious<CR>')
 keymap('n', '<A->>', ' :BufferMoveNext<CR>')
