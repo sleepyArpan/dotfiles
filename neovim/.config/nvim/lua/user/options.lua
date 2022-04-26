@@ -34,9 +34,11 @@ local options = {
   splitright = true,
   splitbelow = true,
   ignorecase = true,
+  list = true,
 }
 
 vim.opt.iskeyword:append("-")
+vim.opt.listchars:append("eol:↴")
 
 for option_name, option_value in pairs(options) do
 	vim.opt[option_name] = option_value

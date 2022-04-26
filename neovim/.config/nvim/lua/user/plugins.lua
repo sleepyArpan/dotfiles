@@ -68,6 +68,12 @@ return packer.startup(function(use)
    run = ':TSUpdate'
   }) -- AST parser
   use({
+  "neovim/nvim-lspconfig", -- configure nvim native lsp
+  requires = {
+     { 'williamboman/nvim-lsp-installer' }, -- easily install language servers
+    }
+  });
+  use({
     "hrsh7th/nvim-cmp",
     requires = {
       "hrsh7th/cmp-nvim-lsp", -- nvim-cmp source lsp completion
@@ -78,6 +84,9 @@ return packer.startup(function(use)
     }
    });
   use "rafamadriz/friendly-snippets" -- Bunch of snippets
+  use "windwp/nvim-ts-autotag" -- Autocomplete html tags
+  use "windwp/nvim-autopairs" -- Auto close quotes/brackets
+  use "lukas-reineke/indent-blankline.nvim" -- Shows indent lines
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
