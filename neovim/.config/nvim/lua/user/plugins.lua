@@ -41,14 +41,14 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+  use 'wbthomason/packer.nvim' -- Have packer manage itself
+  use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
+  use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
   use 'shaunsingh/nord.nvim' -- Colorscheme
   use {
    'romgrk/barbar.nvim',
    requires = {'kyazdani42/nvim-web-devicons'}
-  } -- Bufferline 
+  } -- Bufferline
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -68,25 +68,26 @@ return packer.startup(function(use)
    run = ':TSUpdate'
   }) -- AST parser
   use({
-  "neovim/nvim-lspconfig", -- configure nvim native lsp
+  'neovim/nvim-lspconfig', -- configure nvim native lsp
   requires = {
      { 'williamboman/nvim-lsp-installer' }, -- easily install language servers
     }
   });
   use({
-    "hrsh7th/nvim-cmp",
+    'hrsh7th/nvim-cmp',
     requires = {
-      "hrsh7th/cmp-nvim-lsp", -- nvim-cmp source lsp completion
-      "hrsh7th/cmp-buffer", -- nvim-cmp source for buffer completion
-      "hrsh7th/cmp-path", -- nvim-cmp source for path completion
-      "saadparwaiz1/cmp_luasnip", -- nvim-cmp source for lua snip
-      "L3MON4D3/LuaSnip", -- nvim-cmp requires a snippet engine for completion
+      'hrsh7th/cmp-nvim-lsp', -- nvim-cmp source lsp completion
+      'hrsh7th/cmp-buffer', -- nvim-cmp source for buffer completion
+      'hrsh7th/cmp-path', -- nvim-cmp source for path completion
+      'saadparwaiz1/cmp_luasnip', -- nvim-cmp source for lua snip
+      'L3MON4D3/LuaSnip', -- nvim-cmp requires a snippet engine for completion
     }
    });
-  use "rafamadriz/friendly-snippets" -- Bunch of snippets
-  use "windwp/nvim-ts-autotag" -- Autocomplete html tags
-  use "windwp/nvim-autopairs" -- Auto close quotes/brackets
-  use "lukas-reineke/indent-blankline.nvim" -- Shows indent lines
+  use 'rafamadriz/friendly-snippets' -- Bunch of snippets
+  use 'windwp/nvim-ts-autotag' -- Autocomplete html tags
+  use 'windwp/nvim-autopairs' -- Auto close quotes/brackets
+  use 'lukas-reineke/indent-blankline.nvim' -- Shows indent lines
+  use 'b3nj5m1n/kommentary' -- Comments
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

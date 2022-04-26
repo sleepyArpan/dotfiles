@@ -18,8 +18,18 @@ M.KEY_MAPPINGS = {
   },
   {
     mode = 'n',
+    key_combination = 'gr',
+    command = '<cmd>lua vim.lsp.buf.references()<CR>'
+  },
+  {
+    mode = 'n',
     key_combination = '<Leader>rn',
     command = '<cmd>lua vim.lsp.buf.rename()<CR>'
+  },
+  {
+    mode = 'n',
+    key_combination = '<Leader>ca',
+    command = '<cmd>lua vim.lsp.buf.code_action()<CR>'
   },
   {
     mode = 'n',
@@ -38,23 +48,6 @@ M.KEY_MAPPINGS = {
   }
 }
 
-M.DIAGNOSTICS_SIGNS = {
-  {
-    type = 'Error',
-    icon = '',
-  },
-  {
-    type = 'Warning',
-    icon = '',
-  },
-  {
-    type = 'Hint',
-    icon = '',
-  },
-  {
-    type = 'Information',
-    icon =  '',
-  }
-}
+M.DIAGNOSTICS_SIGNS = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
 return M;

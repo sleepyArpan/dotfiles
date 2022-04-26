@@ -25,4 +25,4 @@ keymap('n', '<A-9>', ':BufferGoto 9<CR>')
 keymap('n', '<A-0>', ':BufferLast<CR>')
 -- Close buffer
 keymap('n', '<A-c>', ':BufferClose<CR>')
-keymap('n', '<leader>cl', ':BufferCloseAllButCurrent<CR>')
+keymap('n', '<A-m>', ':BufferCloseAllButCurrent<CR>')
