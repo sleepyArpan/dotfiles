@@ -1,8 +1,8 @@
 local keymap = require("user.utils").map
 
 vim.g.bufferline = {
-	closable = false,
-	animation = false,
+    closable = false,
+    animation = false,
 }
 
 -- Navigate buffers
