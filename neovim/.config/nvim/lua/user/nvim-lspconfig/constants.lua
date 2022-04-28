@@ -4,7 +4,7 @@ M.KEY_MAPPINGS = {
   {
     mode = "n",
     key_combination = "gd",
-    command = "<Cmd>lua vim.lsp.buf.definition()<CR>",
+    command = "<Cmd>Telescope lsp_definitions<CR>",
   },
   {
     mode = "n",
