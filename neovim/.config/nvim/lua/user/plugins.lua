@@ -64,6 +64,7 @@ return packer.startup(function(use)
     "nvim-telescope/telescope.nvim",
     requires = { "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons" },
   }) -- File finder
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", requires = "nvim-telescope/telescope.nvim" })
   use("stevearc/dressing.nvim") -- Better ui for select and input apis of neovim
   use({
     "nvim-treesitter/nvim-treesitter",

@@ -1,11 +1,12 @@
 local map = require("user.utils").map
+local t = require("telescope")
 
 map("n", "<C-f>", ":Telescope find_files<CR>") -- file search
 map("n", "<C-p>", ":Telescope git_files<CR>") -- file search
 map("n", "<C-g>", ":Telescope live_grep<CR>") -- project wide grep
 map("n", "<C-b><C-b>", ":Telescope buffers<CR>") -- buffer search
 
-require("telescope").setup({
+t.setup({
   defaults = {
     path_display = { "truncate" },
     sorting_strategy = "ascending", -- Best match is at top
@@ -36,4 +37,14 @@ require("telescope").setup({
       },
     },
   },
+  extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      -- the default case_mode is "smart_case"
+    },
+  },
 })
+t.load_extension("fzf")
