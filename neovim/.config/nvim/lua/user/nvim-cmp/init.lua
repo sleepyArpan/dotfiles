@@ -1,19 +1,19 @@
-local cmp = require('cmp');
-local luasnip = require('luasnip');
-local utils = require('user.nvim-cmp.utils');
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+local utils = require("user.nvim-cmp.utils")
 
 cmp.setup({
   completion = {
     -- For auto-selecting the first item in the menu
-    completeopt = 'menu,menuone,noselect',
+    completeopt = "menu,menuone,noselect",
   },
   sources = {
     -- List of all the sources to be used by nvim-cmp
     -- See the requires list for nvim-cmp in plugins/init.lua
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'path' },
-    { name = 'buffer', keyword_length = 3},
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "path" },
+    { name = "buffer", keyword_length = 3 },
   },
   snippet = {
     expand = utils.luasnip_expand,
@@ -24,15 +24,15 @@ cmp.setup({
   },
   -- Custom keybindings
   mapping = {
-    ['<CR>'] = cmp.mapping.confirm({
+    ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
-    ['<C-j>'] = cmp.mapping.confirm({
+    ["<C-j>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ["<C-Space>"] = cmp.mapping.complete(),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -64,5 +64,5 @@ cmp.setup({
   },
   experimental = {
     ghost_text = true,
-  }
-});
+  },
+})
