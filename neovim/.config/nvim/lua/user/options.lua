@@ -5,6 +5,7 @@ local options = {
   hlsearch = true, -- highlights searched words
   encoding = "utf-8", -- basic file encoding
   cursorline = true, -- highlights the line the cursor is on
+  number = true, -- enables line numbers
   relativenumber = true, -- enables relative line numbers
   autoread = true, -- Update neovim if a file changes from outside of neovim
   termguicolors = true, -- Enables 24-bit RGB color in the Terminal UI
