@@ -10,7 +10,6 @@ require'nvim-tree'.setup {
   view = {
     width = 80,
     side = 'right',
-    auto_resize = true
   },
   filters = {
     dotfiles = false,
