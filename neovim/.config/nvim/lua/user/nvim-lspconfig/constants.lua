@@ -19,7 +19,6 @@ M.KEY_MAPPINGS = {
   {
     mode = 'n',
     key_combination = 'gr',
-    -- command = '<cmd>lua vim.lsp.buf.references()<CR>'
     command = '<cmd>Telescope lsp_references<CR>'
   },
   {
@@ -31,6 +30,11 @@ M.KEY_MAPPINGS = {
     mode = 'n',
     key_combination = '<Leader>rn',
     command = '<cmd>lua vim.lsp.buf.rename()<CR>'
+  },
+  {
+    mode = 'n',
+    key_combination = '<Leader>ca',
+    command = '<cmd>lua vim.lsp.buf.code_action()<CR>'
   },
   {
     mode = 'n',
