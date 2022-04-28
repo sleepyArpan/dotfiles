@@ -1,9 +1,9 @@
-local keymap = require('user.utils').map;
+local keymap = require("user.utils").map
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
-keymap('n', '<Leader>/', ':set hlsearch!<CR>'); -- <Space> + / to toggle highlight.
+keymap("n", "<Leader>/", ":set hlsearch!<CR>") -- <Space> + / to toggle highlight.
 
 -- Normal --
 -- Better window navigation
