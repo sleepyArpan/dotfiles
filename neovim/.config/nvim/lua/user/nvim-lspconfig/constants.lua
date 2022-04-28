@@ -19,7 +19,8 @@ M.KEY_MAPPINGS = {
   {
     mode = 'n',
     key_combination = 'gr',
-    command = '<cmd>lua vim.lsp.buf.references()<CR>'
+    -- command = '<cmd>lua vim.lsp.buf.references()<CR>'
+    command = '<cmd>Telescope lsp_references<CR>'
   },
   {
     mode = 'n',
