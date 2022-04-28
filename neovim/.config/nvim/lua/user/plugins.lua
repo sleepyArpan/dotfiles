@@ -74,6 +74,7 @@ return packer.startup(function(use)
      { 'williamboman/nvim-lsp-installer' }, -- easily install language servers
     }
   });
+  use({ 'jose-elias-alvarez/null-ls.nvim' }) -- Formatter and Linter for a bunch of languages
   use({
     'hrsh7th/nvim-cmp',
     requires = {
