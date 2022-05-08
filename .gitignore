@@ -39,5 +39,8 @@ luac.out
 *.x86_64
 *.hex
 
+# Mac stuff
+.DS_Store
+
 
 **/plugin/packer_compiled.lua
