@@ -5,8 +5,8 @@ window:
   title: "👨‍💻"
   dynamic_title: false
   padding:
-   x: 6
-   y: 6
+    x: 6
+    y: 6
 
 # TokyoNight Alacritty Colors
 colors:
@@ -44,18 +44,14 @@ colors:
 font:
   normal:
     family: JetBrainsMono Nerd Font
-    # family: DankMono Nerd Font
     style: Regular
   bold:
     family: JetBrainsMono Nerd Font
-    # family: DankMono Nerd Font
     style: Bold
   italic:
     family: JetBrainsMono Nerd Font
-    # family: DankMono Nerd Font
     style: Italic
-  # size: 12.0
-  size: 13.5
+  size: 15.0
   offset:
     x: 0
     y: 0
