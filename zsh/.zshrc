@@ -18,6 +18,8 @@ alias dev="sh ~/Development/scripts/dev.sh"
 # alias python3=python3.7
 
 # Navi things
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 # VIRTUALENVWRAPPER_PYTHON=$(which python3)
 # export WORKON_HOME=$HOME/.virtualenvs
 # source /usr/local/bin/virtualenvwrapper.sh
@@ -54,3 +56,5 @@ zicompinit # <- https://z.digitalclouds.dev/docs/guides/commands
 zi light zsh-users/zsh-syntax-highlighting
 zi light zsh-users/zsh-completions
 zi light zsh-users/zsh-autosuggestions
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
