@@ -16,6 +16,9 @@
   pager = delta
   editor = nvim
 
+[http]
+  postbuffer = 9999999999
+
 [delta]
   features = line-numbers decorations
   syntax-theme = tokyoNight
