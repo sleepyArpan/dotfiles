@@ -11,35 +11,12 @@ compinit
 if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
   . /opt/local/etc/profile.d/bash_completion.sh
 fi
+# Prefer lsd over ls
 
-# alias for tmux shell script
-alias dev="sh ~/Development/scripts/dev.sh"
-# alias pip=pip3
-# alias python3=python3.7
-
-# Navi things
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-# VIRTUALENVWRAPPER_PYTHON=$(which python3)
-# export WORKON_HOME=$HOME/.virtualenvs
-# source /usr/local/bin/virtualenvwrapper.sh
-
-# Prefer exa over ls
-if type exa > /dev/null 2>&1; then
-  alias l='exa -l --icons'
-  alias ls='exa --icons'
-  alias la='exa -a --icons'
-else
-  alias l='ls -l'
-  alias ls='ls'
-  alias la='ls -a'
-fi
-
+alias l='lsd -l'
+alias ls='lsd --icon always'
+alias la='lsd -a --icon always'
 eval "$(starship init zsh)"
-
-# Volta path addition
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
   print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
@@ -57,22 +34,22 @@ zi light zsh-users/zsh-syntax-highlighting
 zi light zsh-users/zsh-completions
 zi light zsh-users/zsh-autosuggestions
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$PATH"
-
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+export PATH="$HOME/bin:$PATH"export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completionexport PATH="/opt/homebrew/opt/mongodb-community@5.0/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# bun completions
-[ -s "/Users/arpan/.bun/_bun" ] && source "/Users/arpan/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
