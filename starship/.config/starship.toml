@@ -1,7 +1,8 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
+command_timeout	= 1000
 
-[character]                        
+[character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red) "
 vicmd_symbol = "[V](bold green) "
