@@ -11,11 +11,15 @@ compinit
 if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
   . /opt/local/etc/profile.d/bash_completion.sh
 fi
-# Prefer lsd over ls
 
+# Prefer lsd over ls
 alias l='lsd -l'
 alias ls='lsd --icon always'
 alias la='lsd -a --icon always'
+
+# Use bat instead of cat
+alias cat='bat --paging=never'
+
 eval "$(starship init zsh)"
 
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
