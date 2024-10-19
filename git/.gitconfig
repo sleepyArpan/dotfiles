@@ -3,7 +3,13 @@
   name = Arpan Chattopadhyay
   email = arpanchattopadhyay23@gmail.com
 
-[includeif "gitdir:~/base/coursera"]
+[core]
+  pager = delta
+  editor = nvim
+  sshCommand = "ssh -i ~/.ssh/id_ed25519_personal"
+
+
+[includeIf "gitdir:~/base/coursera/"]
   path = .gitconfig-coursera
 
 [alias]
@@ -14,11 +20,6 @@
   po = push origin
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
   amend = commit --amend --no-edit
-
-[core]
-  pager = delta
-  editor = nvim
-  sshCommand = "ssh -i ~/.ssh/id_ed25519_personal"
 
 [http]
   postbuffer = 9999999999

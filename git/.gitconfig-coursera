@@ -3,4 +3,5 @@
   email = achattopadhyay@coursera.org
 
 [core]
-  sshCommand = "ssh i ~/.ssh/id_ed25519"
+  sshCommand = "ssh -i ~/.ssh/id_ed25519"
+  editor = code
