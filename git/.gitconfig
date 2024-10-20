@@ -8,10 +8,6 @@
   editor = nvim
   sshCommand = "ssh -i ~/.ssh/id_ed25519_personal"
 
-
-[includeIf "gitdir:~/base/coursera/"]
-  path = .gitconfig-coursera
-
 [alias]
   a = add .
   s = status
@@ -44,3 +40,7 @@
 
 [init]
   defaultBranch = main
+
+[includeIf "gitdir:~/base/coursera/"]
+  path = .gitconfig-coursera
+
